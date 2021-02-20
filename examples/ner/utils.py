@@ -65,9 +65,7 @@ class CoNLLProcessor(object):
             for line in f:
                 line = line.rstrip()
                 if line.startswith("-DOCSTART"):
-                    print(line)
                     if words:
-                        print(sentence_boundaries)
                         data.append((words, labels, sentence_boundaries))
                         assert sentence_boundaries[0] == 0
                         assert sentence_boundaries[-1] == len(words)
