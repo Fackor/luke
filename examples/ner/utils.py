@@ -60,7 +60,7 @@ class CoNLLProcessor(object):
         data = []
         words = []
         labels = []
-        sentence_boundaries = []
+        sentence_boundaries = [0]
         with open(input_file) as f:
             for line in f:
                 line = line.rstrip()
@@ -73,7 +73,7 @@ class CoNLLProcessor(object):
                         assert sentence_boundaries[-1] == len(words)
                         words = []
                         labels = []
-                        sentence_boundaries = []
+                        sentence_boundaries = [0]
                     continue
 
                 if not line:
