@@ -219,6 +219,14 @@ def convert_examples_to_features(
                 entity_size = math.ceil(len(entity_ids) / split_size)
                 start = i * entity_size
                 end = start + entity_size
+                print(f"sentence: {example}")
+                print(f"index: {example_index}")
+                print(f"entity_start_positions: {entity_start_positions[start:end]}")
+                print(f"entity_end_positions: {entity_end_positions[start:end]} ")
+                print(f"entity_ids: {entity_ids[start:end]}")
+                print(f"entity_position_ids: {entity_position_ids[start:end]}")
+                print(f"entity_segment_ids: {entity_segment_ids[start:end]}")
+                print(f"original_entity_spans: {original_entity_spans[start:end]}")
                 features.append(
                     InputFeatures(
                         example_index=example_index,
